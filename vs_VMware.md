@@ -1,9 +1,9 @@
 # Benefits to use EXPRESSCLUSTER X (ECX) Guest OS cluster comparing with VMware vSphere
 
 ```bat
-           Active VM                               Standby VM
+              VM1                                  　　VM2
    +------------------------+              +------------------------+
-   |  Application (Active) <----------------> Application (Active)  |
+   |  Application (Active) <----------------> Application (Standby) |
    |   EXPRESSCLUSTER X     |  Clustered   |   EXPRESSCLUSTER X     |
    |                        |              |                        |
    | Guest OS (Win/Lin/Sol) |              | Guest OS (Win/Lin/Sol) |
