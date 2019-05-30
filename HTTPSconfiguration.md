@@ -1,7 +1,7 @@
 
 
 ## Overview
-Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X WebManager or WebUI in test environment.
+Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X WebManager or Cluster WebUI in test environment.
 
 ## Note
 The procedure depends on your environment (such as OS version) and mey different.
