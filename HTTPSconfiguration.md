@@ -7,15 +7,14 @@ Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X Web
 The procedure depends on your environment (such as OS version) and mey different.
 
 ## For Windows
-1. Download OpenSSL  
+1. Download OpenSSL, Win64 OpenSSL v1.0.
 	http://slproweb.com/products/Win32OpenSSL.html  
-	e.g.  
 	Win64 OpenSSL v1.0.2n Light  
 	http://slproweb.com/download/Win64OpenSSL_Light-1_0_2n.exe
 1. Install OpenSSL
 	- Install folder: C:\OpenSSL-Win64(default)
 	- OpenSSL DLL installation: The OpenSSL binaries (/bin) directory
-1. Create .crt and .key
+1. Create .crt and .key files
 	- Execute the following commands:  
 	```bat
 	  >mkdir C:\tmp\ssl
@@ -27,7 +26,7 @@ The procedure depends on your environment (such as OS version) and mey different
 	```
 1. Configure HTTPS connection on Cluster configuration>
 	- Change Cluster Properties
-		-WebManager tab
+		- WebManager tab
 			- Encryption Settings button 
 				- HTTPS: Check
 				- Certification File: C:\tmp\ssl\server.crt
