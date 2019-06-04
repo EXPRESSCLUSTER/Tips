@@ -7,7 +7,7 @@ Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X Web
 The procedure depends on your environment (such as OS version) and mey different.
 
 ## For Windows
-1. Download OpenSSL, Win64 OpenSSL v1.0.
+1. Download OpenSSL, Win64 OpenSSL v1.0.  
 	http://slproweb.com/products/Win32OpenSSL.html  
 	Win64 OpenSSL v1.0.2n Light  
 	http://slproweb.com/download/Win64OpenSSL_Light-1_0_2n.exe
