@@ -3,9 +3,6 @@
 ## Overview
 Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X WebManager or Cluster WebUI in test environment.
 
-## Note
-The procedure depends on your environment (such as OS version) and mey different.
-
 ## For Windows
 1. Download OpenSSL, Win64 OpenSSL v1.0.  
 	http://slproweb.com/products/Win32OpenSSL.html  
@@ -15,11 +12,17 @@ The procedure depends on your environment (such as OS version) and mey different
 	- Install folder: C:\OpenSSL-Win64(default)
 	- OpenSSL DLL installation: The OpenSSL binaries (/bin) directory
 1. Create .crt and .key files
-	- Execute the following commands:  
+	- Create folder and move to it.  
 	```bat
 	  >mkdir C:\tmp\ssl
 	  >cd C:\tmp\ssl
+	```
+	- Add environment valiables.  
+	```bat
 	  >path=%path%;C:\OpenSSL-Win64\bin
+	```
+	- Create .ket, .csr, .crt files.  
+	```bat
 	  >openssl genrsa -out server.key
 	  >openssl req -new -key server.key -subj "/C=JP/ST=Hiroshima/L=Hiroshima/O=ore/OU=ore/CN=ore" -config c:\OpenSSL-Win64\bin\openssl.cfg > server.csr
 	  >openssl x509 -req -in server.csr -signkey server.key -out server.crt -days 7300 -extensions server
