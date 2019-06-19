@@ -1,7 +1,7 @@
-# Witness Server on Windows QSG
+# Witness Server on Windows Quick Start Guide
 
 ## Overview
-This QSG shows how to setup Witness Server on Windows machine.
+This Guide shows how to setup Witness Server on Windows machine.
 
 ## Reference
 [EXPRESSCLUSTER X 4.1 for Windows Reference Guide](https://www.nec.com/en/global/prod/expresscluster/en/support/Windows/W41_RG_EN_01.pdf)  
@@ -53,7 +53,7 @@ This QSG shows how to setup Witness Server on Windows machine.
 ```
 
 ## Preparation
-1. Get node.js installer and store it on Witness Server.  
+1. Get Node.js installer and store it on Witness Server.  
 	https://nodejs.org/en/
 1. Check ports for Witness Server are available and opened.  
 	Default: 80 for http and 443 for https
