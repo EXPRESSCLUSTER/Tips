@@ -136,3 +136,8 @@ By registering as a Windows Service, it can be started automatically after reboo
 	The service for "clpwitnessd-service" was started.
 	```
 1. Confirm that "clpwitnessd-service" exists on Windows Service Manager.
+
+## Note
+- One Witness Server can control multi clusters Witness HeartBeats.
+- To control multi Witness HeartBeats with one Witness Server, each cluster name should be different.
+- Proxy between cluster nodes and Witness Servers does not be supported.
