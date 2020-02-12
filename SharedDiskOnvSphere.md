@@ -16,7 +16,7 @@ This guide shows how to create a shared disk cluster on vSphere ESXi.
        |          (Shared)         |
        +---------------------------+
 ```
-## Procedure
+## Setup Shared Disk
 1. Create 2 VMs with a virtual hard disk (vHDD) which is stored on each local datastores and used for system disk (e.g. C: drive).
 1. Install OS on the 2 VMs.
 1. Create a virtual hard disk (vHDD) which is stored on shared datastore and used for cluster shared disk.
@@ -55,6 +55,55 @@ This guide shows how to create a shared disk cluster on vSphere ESXi.
        \* It may be better to set different number for "x" both VMs.
 			- Disk mode: Independent - persistent
 			- Sharing: Multi-writer sharing
-1. Start both VMs and set them up as shared disk cluster.  
+
+## Checking Shared disk
+### For Windows Cluster
+1. Start only VM1. (Keep VM2 shutdown)  
 	**Note:**  
   \* If VMs fail to start, settings for the shared vHDD are not enough.
+
+1. On VM1, format the shared disk.
+	- Start Windows Computer Management.
+	- Make the shared disk Online.
+	- Initialize it with GPT. (Not MBR)
+	- Create the following partitions:
+	\<In the case of Shared Disk\>
+		- Partition1 for Disk NP  
+			- Size: 20MB  
+			- Drive Letter: As you like (sample "Z:")  
+			- File System: RAW (Don't format)
+		- Partition2 for Data Partition  
+			- Size: As you like (sample: 500GB)  
+			- Drive Letter: As you like (sample: "E:")  
+			- File System: Ntfs  
+	\<In the case of Hybrid Disk\>
+		- Partition1 for Disk NP  
+			- Size: 20MB  
+			- Drive Letter: As you like (sample "Z:")  
+			- File System: RAW (Don't format)
+		- Partition2 for Cluster Partition  
+			- Size: 1GB  
+			- Drive Letter: As you like (sample "X:")  
+			- File System: RAW (Don't format)
+		- Partition3 for Data Partition
+			- Size: As you like (sample: 500GB)  
+			- Drive Letter: As you like (sample: "E:")  
+			- File System: Ntfs
+1. On VM1, confirm that you can see the shared disk (E:) on Explorer and create test file on it.
+1. On VM1, make the shared disk Offline.
+	- Start Windows Computer Management.
+	- Make the shared disk Offline.
+1. Shutdown VM1.
+
+1. Start only VM2. (Keep VM1 shutdown)  
+	**Note:**  
+  \* If VMs fail to start, settings for the shared vHDD are not enough.
+
+1. On VM2, format the shared disk.
+	- Start Windows Computer Management.
+	- Make the shared disk Online.
+	- Confirm that you can see 3 prtitions which were created on VM1.
+1. On VM2, confirm that you can see the shared disk (E:) on Explorer and the test file which was created on VM1.
+1. On VM2, make the shared disk Offline.
+	- Start Windows Computer Management.
+	- Make the shared disk Offline.
