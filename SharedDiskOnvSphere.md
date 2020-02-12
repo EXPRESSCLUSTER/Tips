@@ -8,7 +8,7 @@ This guide shows how to create a shared disk cluster on vSphere ESXi.
    +-------+                   +-------+
    |       |                   |       |
    |  VM1  | <-- Clustered --> |  VM2  |
-   |       |                   |       |
+   |  ECX  |                   |  ECX  |
    +-----+-+                   +-+-----+
          |                       |
        +-+-----------------------+-+
@@ -17,9 +17,9 @@ This guide shows how to create a shared disk cluster on vSphere ESXi.
        +---------------------------+
 ```
 ## Procedure
-1. Create 2 VMs
-1. Install OS on the VMs
-1. Create a virtual hard disk (vHDD) which is used for cluster shared disk.
+1. Create 2 VMs with a virtual hard disk (vHDD) which is stored on each local datastores and used for system disk (e.g. C: drive).
+1. Install OS on the 2 VMs.
+1. Create a virtual hard disk (vHDD) which is stored on shared datastore and used for cluster shared disk.
 	1. Log on to ESXi host with a SSH client such as TeraTerm.
 	1. Create a directory to store the vHDD file (.vmdk):  
 		```bat
@@ -32,8 +32,8 @@ This guide shows how to create a shared disk cluster on vSphere ESXi.
     **Note:**  
       \* The virtual hard disk should be created as "Thick Provisioning (Eager Zeroed)".  
 	  \* The virtual hard disk should be created on VMFS. (NFS does not allow Thick Provisioning)  
-	  \* If you create the virtual disk with vSphere Web Client (GUI), you cannot specify .vmdk file name and path.  
-	  \* If you expand the virtual disk after you create it as "Thick Provisioning (Eager Zeroed)", it will be converted to "Thin Provisioning" automaticaly.  
+	  \* You should create the shared vHDD with the command above or vCenter Server (GUI) because you cannot specify .vmdk file name and location with vSphere Host Client.  
+	  \* When you expand the shared vHDD after you create it, please surey convert it to Thick Provisioning (Eager Zeroed). Because when expanding Thick Provisioning vHDD, it will be converted to "Thin Provisioning" automaticaly.  
 
 1. Attach the vHDD for the both 2 VMs
 	1. Stop the VM
