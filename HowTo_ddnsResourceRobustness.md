@@ -38,10 +38,20 @@ Therefore, adding to ddns resource "Delete the Registered IP Address" setting, p
 - Store scripts
 	On both servers
 	1. Copy the following 3 scripts to "C:\Program Files\EXPRESSCLUSTER\bin".
-		- RemoveRecord1.bat
-		- RemoveRecord2.bat
-		- RemoveRecord.ps1
-
+		- [RemoveRecord1.bat](https://github.com/EXPRESSCLUSTER/Tips/blob/master/Scripts_ddnsResourceRobustness/RemoveRecord1.bat)
+		- [RemoveRecord2.bat](https://github.com/EXPRESSCLUSTER/Tips/blob/master/Scripts_ddnsResourceRobustness/RemoveRecord2.bat)
+		- [RemoveRecord.ps1](https://github.com/EXPRESSCLUSTER/Tips/blob/master/Scripts_ddnsResourceRobustness/RemoveRecord.ps1)
+	1. Set RemoveRecord.ps1 parameters:
+		- $dnsServerIp
+		- $ddnsVirtualHostname
+		- $dnsZoneName  
+	```bat  
+	# Set the following parameters #  
+	$dnsServerIp = "192.168.10.10"  
+	$ddnsVirtualHostname = "ddns-test"  
+	$dnsZoneName = "test.local"  
+	################################  
+	```
 ### Configuration
 1. Add application resource and set as follow:
 	- Info
