@@ -45,6 +45,7 @@ Therefore, adding to ddns resource "Delete the Registered IP Address" setting, p
 		- $dnsServerIp
 		- $ddnsVirtualHostname
 		- $dnsZoneName  
+		  e.g.)
 	```bat  
 	# Set the following parameters #  
 	$dnsServerIp = "192.168.10.10"  
@@ -97,6 +98,9 @@ Therefore, adding to ddns resource "Delete the Registered IP Address" setting, p
 	- Details
 		- Delete the Registered IP Address: Check
 1. Apply the configuration
+
+## Note
+Application resource takes some time to get activated for DNS Server operation command (Powershell Get-DnsServer/Remove-DnsServer command).
 
 ## Reference
 https://docs.microsoft.com/en-us/powershell/module/dnsserver/?view=win10-ps
