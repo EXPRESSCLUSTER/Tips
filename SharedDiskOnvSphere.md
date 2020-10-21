@@ -67,28 +67,28 @@ This guide shows how to create a shared disk cluster on vSphere ESXi.
 	- Make the shared disk Online.
 	- Initialize it with GPT. (Not MBR)
 	- Create the following partitions:
-	\<In the case of Shared Disk\>
-		- Partition1 for Disk NP  
-			- Size: 20MB  
-			- Drive Letter: As you like (sample "Z:")  
-			- File System: RAW (Don't format)
-		- Partition2 for Data Partition  
-			- Size: As you like (sample: 500GB)  
-			- Drive Letter: As you like (sample: "E:")  
-			- File System: Ntfs  
-	\<In the case of Hybrid Disk\>
-		- Partition1 for Disk NP  
-			- Size: 20MB  
-			- Drive Letter: As you like (sample "Z:")  
-			- File System: RAW (Don't format)
-		- Partition2 for Cluster Partition  
-			- Size: 1GB  
-			- Drive Letter: As you like (sample "X:")  
-			- File System: RAW (Don't format)
-		- Partition3 for Data Partition
-			- Size: As you like (sample: 500GB)  
-			- Drive Letter: As you like (sample: "E:")  
-			- File System: Ntfs
+		- \<In the case of Shared Disk\>
+			- Partition1 for Disk NP  
+				- Size: 20MB  
+				- Drive Letter: As you like (sample "Z:")
+				- File System: RAW (Don't format)
+			- Partition2 for Data Partition  
+				- Size: As you like (sample: 500GB)  
+				- Drive Letter: As you like (sample: "E:")
+				- File System: Ntfs  
+		- \<In the case of Hybrid Disk\>
+			- Partition1 for Disk NP  
+				- Size: 20MB  
+				- Drive Letter: As you like (sample "Z:")  
+				- File System: RAW (Don't format)
+			- Partition2 for Cluster Partition  
+				- Size: 1GB  
+				- Drive Letter: As you like (sample "X:")  
+				- File System: RAW (Don't format)
+			- Partition3 for Data Partition
+				- Size: As you like (sample: 500GB)  
+				- Drive Letter: As you like (sample: "E:")  
+				- File System: Ntfs
 1. On VM1, confirm that you can see the shared disk (E:) on Explorer and create test file on it.
 1. On VM1, make the shared disk Offline.
 	- Start Windows Computer Management.
