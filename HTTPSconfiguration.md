@@ -20,7 +20,7 @@ Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X Web
 	```bat
 	  >path=%path%;C:\OpenSSL-Win64\bin
 	```
-	- Create .ket, .csr, .crt files.  
+	- Create .key, .csr, .crt files.  
 	```bat
 	  >openssl genrsa -out server.key
 	  >openssl req -new -key server.key -subj "/C=JP/ST=Hiroshima/L=Hiroshima/O=ore/OU=ore/CN=ore" -config c:\OpenSSL-Win64\bin\openssl.cfg > server.csr
@@ -57,7 +57,7 @@ Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X Web
 	```bat
 	  >path=%path%;C:\OpenSSL-Win64\bin
 	```
-	- Create .ket, .csr, .crt files.  
+	- Create .key, .csr, .crt files.  
 	```bat
 	  >openssl genrsa -out server.key 2048
 	  >openssl req -new -key C:\ssl\server.key -utf8 -out server.csr
