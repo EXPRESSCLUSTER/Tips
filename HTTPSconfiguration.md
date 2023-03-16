@@ -16,7 +16,7 @@ Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X Web
 	  >mkdir C:\tmp\ssl
 	  >cd C:\tmp\ssl
 	```
-	- Add environment valiables.  
+	- Add environment variables.  
 	```bat
 	  >path=%path%;C:\OpenSSL-Win64\bin
 	```
@@ -38,7 +38,7 @@ Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X Web
 				- Private Key File: C:\tmp\ssl\server.key
 				- SSL Library: C:\OpenSSL-Win64\bin\ssleay32.dll
 				- Crypto Library: C:\OpenSSL-Win64\bin\libeay32.dll
-	- Apply the configuration and restart Browser which connects to Webanager or WebUI.
+	- Apply the configuration and restart Browser which connects to WebManager or WebUI.
 
 ### In the case of OpenSSL v1.1
 1. Download OpenSSL, Win64 OpenSSL v1.1.
@@ -53,7 +53,7 @@ Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X Web
 	  >mkdir C:\ssl
 	  >cd C:\ssl
 	```
-	- Add environment valiables.  
+	- Add environment variables.  
 	```bat
 	  >path=%path%;C:\OpenSSL-Win64\bin
 	```
@@ -75,7 +75,7 @@ Here is the sample procedure to enable HTTPS connection for EXPRESSCLUSTER X Web
 				- Private Key File: C:\ssl\server.key
 				- SSL Library: C:\OpenSSL-Win64\bin\ssleay32.dll
 				- Crypto Library: C:\OpenSSL-Win64\bin\libeay32.dll
-	- Apply the configuration and restart Browser which connects to Webanager or WebUI.
+	- Apply the configuration and restart Browser which connects to WebManager or WebUI.
 
 ## For Linux
 ### Assumption
@@ -99,4 +99,4 @@ OpenSSL which is included in OS iso media is installed.
 				- Private Key File: /tmp/ssl/server.key
 				- SSL Library: /usr/lib64/libssl.so.10
 				- Crypto Library: /usr/lib64/libcrypto.so.10
-	- Apply the configuration and restart Browser which connects to Webanager or WebUI.
+	- Apply the configuration and restart Browser which connects to WebManager or WebUI.
